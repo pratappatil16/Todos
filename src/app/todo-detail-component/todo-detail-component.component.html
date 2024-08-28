@@ -1,0 +1,32 @@
+<form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Title</label>
+    <input id="title" formControlName="title" />
+  </div>
+  <div>
+    <label for="status">Status</label>
+    <select id="status" formControlName="status">
+      <option value="todo">To Do</option>
+      <option value="in-progress">In Progress</option>
+      <option value="complete">Complete</option>
+    </select>
+  </div>
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  <div>
+    <label for="priority">Priority</label>
+    <select id="priority" formControlName="priority">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+  </div>
+  <div>
+    <label for="duedate">Due Date</label>
+    <input type="date" id="duedate" formControlName="duedate" />
+  </div>
+  <button type="submit">Update Todo</button>
+  <button type="button" (click)="onDelete()">Delete Todo</button>
+</form>

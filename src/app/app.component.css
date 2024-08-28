@@ -1,0 +1,117 @@
+/* Global box-sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Container styling */
+.box {
+    width: 100vw;
+    height: calc(100vh - 71px);
+    display: grid;
+    padding:0px 10px;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    grid-template-rows: 1fr; /* One row */
+    gap: 10px; /* Optional: adds spacing between items */
+}
+
+.todos {
+     /* Optional: different background color for visibility */
+    display: flex; /* Center content horizontally and vertically */
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Optional: additional styling for inner content */
+.todos > div {
+    font-size: 1.2em; /* Adjust as needed */
+}
+
+.toDoboxhead {
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+}
+
+.text {
+    padding: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative; /* Make sure the pseudo-element is positioned relative to its parent */
+}
+
+.text::after {
+    content: ""; /* Required to make the pseudo-element appear */
+    display: block; /* Makes the pseudo-element behave like a block-level element */
+    width: 100%; /* Takes the full width of the parent element */
+    height: 2px; /* Height of the line */
+    background-color: red; /* Color of the line */
+    position: absolute; /* Absolute positioning for precise placement */
+    bottom: 0; /* Aligns the line at the bottom of the parent element */
+    left: 0; /* Aligns the line to the left edge of the parent element */
+}
+
+.list {
+    width: 100%;
+    height: calc(100% - 40px); /* Corrected height calculation */
+    overflow-y: auto; /* Handle overflow if needed */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+
+.card{
+    margin: 10px 0px;
+    cursor: pointer;
+    width: 92%;
+    height: 100px;
+    border-radius: 5px;
+    background-color: rgb(222, 239, 255);
+}
+.card:hover{
+    border: 3px solid blueviolet;
+}
+.card {
+    /* background-color: #fff; */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* width: 300px; */
+    padding: 16px;
+    margin: 10px;
+  }
+
+  .card > div {
+    margin-bottom: 8px;
+  }
+
+  .card > div:last-child {
+    margin-bottom: 0;
+  }
+
+  .card .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+
+  .card .title {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .card .date {
+    color: #777;
+  }
+
+  .card .priority span {
+    font-size: 14px;
+    color: #fff;
+    background-color: #f44336; /* Red for Low priority */
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-align: center;
+  }

@@ -1,0 +1,46 @@
+<div
+  class="modal"
+  [ngClass]="{ show: isVisible }"
+  (click)="onBackdropClick($event)"
+>
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Add New Task</h2>
+    <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+      <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" ngModel required />
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          ngModel
+          required
+        ></textarea>
+      </div>
+      <div>
+        <label for="dueDate">Due Date</label>
+        <input type="date" id="dueDate" name="dueDate" ngModel required />
+      </div>
+      <div>
+        <label for="priority">Priority</label>
+        <select id="priority" name="priority" ngModel required>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+      <div>
+        <label for="status">status</label>
+        <select id="status" name="status" ngModel required>
+          <option value="todo">Todo</option>
+          <option value="in-progress"> in-progress</option>
+          <option value="completed">completed</option>
+        </select>
+      </div>
+      <button type="submit">Add Task</button>
+    </form>
+  </div>
+</div>
